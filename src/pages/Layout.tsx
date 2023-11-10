@@ -1,10 +1,14 @@
+import Box from "@mui/material/Box"
 import { Outlet } from "react-router-dom"
+import NavBar from "../components/NavBar"
 
 const Layout = () => {
   return (
     <>
-      <div>Layout</div>
-      <Outlet />
+      <NavBar />
+      <Box p={5}>
+        <Outlet />
+      </Box>
     </>
   )
 }
