@@ -1,19 +1,21 @@
-import { Box, Grid } from "@mui/material"
+import { Box } from "@mui/material"
 import GameHeading from "../components/GameHeading"
+import GameGrid from "../components/GameGrid"
+import Grid from "@mui/material/Unstable_Grid2"
 
 const HomePage = () => {
   return (
     <Grid container>
-      <Grid item xl={2}>
-        Genres
-      </Grid>
-      <Grid item xs={10}>
+      <Grid xl={2}>Genres</Grid>
+      <Grid xs={10}>
         <GameHeading />
         <Box display="flex" my={2}>
           <Box>platform selektor</Box>
           <Box>sort selector</Box>
         </Box>
-        <Grid container>Game cards</Grid>
+        <Box>
+          <GameGrid />
+        </Box>
       </Grid>
     </Grid>
   )
