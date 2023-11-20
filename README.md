@@ -1,7 +1,7 @@
 # Game Store
 
 A Game store is project to bay computer games.
-I am constantly developing this project...
+I am constantly developing this project since 6.11.2023 ...
 
 ## Stack Used
 
