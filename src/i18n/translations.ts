@@ -5,6 +5,9 @@ export const translations = {
         header: {
           appTitle: "Super Gry",
         },
+        gameCard: {
+          button: "Dodaj do koszyka",
+        },
       },
     },
   },

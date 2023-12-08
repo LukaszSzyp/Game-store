@@ -29,9 +29,9 @@ const GameGrid = () => {
       style={{ overflow: "hiden" }}
     >
       <Grid container>
-        {data?.pages.map((page, index) =>
+        {data?.pages.map((page) =>
           page.results.map((game) => (
-            <Grid xl={3}>
+            <Grid xl={3} key={game.id}>
               <GameCardContainer>
                 <GameCard game={game} />
               </GameCardContainer>
