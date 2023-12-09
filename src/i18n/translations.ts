@@ -4,6 +4,7 @@ export const translations = {
       homePage: {
         header: {
           appTitle: "Super Game Store",
+          searchPlaceholder: "Search game...",
         },
         gameCard: {
           button: "Add to basket",
