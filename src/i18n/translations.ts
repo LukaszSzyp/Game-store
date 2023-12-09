@@ -1,12 +1,12 @@
 export const translations = {
-  pl: {
+  en: {
     translation: {
       homePage: {
         header: {
-          appTitle: "Super Gry",
+          appTitle: "Super Game Store",
         },
         gameCard: {
-          button: "Dodaj do koszyka",
+          button: "Add to basket",
         },
       },
     },

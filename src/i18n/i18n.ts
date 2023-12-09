@@ -8,7 +8,7 @@ i18n
   .use(initReactI18next)
   .init({
     debug: false,
-    fallbackLng: ["pl", "en"],
+    fallbackLng: ["en", "pl"],
     resources: translations,
   })
 
