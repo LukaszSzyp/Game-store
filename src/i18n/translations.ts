@@ -7,6 +7,7 @@ export const translations = {
         },
         gameCard: {
           button: "Add to basket",
+          currency: "USD",
         },
       },
     },
