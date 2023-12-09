@@ -1,7 +1,8 @@
 import { Box } from "@mui/material"
+import Grid from "@mui/material/Unstable_Grid2"
+
 import GameHeading from "../components/GameHeading"
 import GameGrid from "../components/GameGrid"
-import Grid from "@mui/material/Unstable_Grid2"
 
 const HomePage = () => {
   return (

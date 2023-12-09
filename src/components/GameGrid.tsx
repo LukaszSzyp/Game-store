@@ -1,5 +1,6 @@
-import { Box, Grid, Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
 import CircularProgress from "@mui/material/CircularProgress"
+
 import InfiniteScroll from "react-infinite-scroll-component"
 import useGames from "../hooks/useGames"
 import GameCardContainer from "./GameCardContainer"

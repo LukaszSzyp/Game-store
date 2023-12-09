@@ -1,17 +1,11 @@
-import {
-  Box,
-  Card,
-  CardContent,
-  CardMedia,
-  Link,
-  Typography,
-} from "@mui/material"
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import getCroppedImageUrl from "../services/image-url"
 
 import Game from "../entities/Game"
 import GameCardPriceAction from "./GameCardPriceAction"
 import PlatformIconList from "./PlatformIconList"
 import CriticScore from "./CriticScore"
+import { Link } from "react-router-dom"
 
 interface Props {
   game: Game
@@ -21,9 +15,8 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card>
       <Link
-        href={`/games/${game.slug}`}
-        color="inherit"
-        sx={{ textDecoration: "none" }}
+        to={`/games/${game.slug}`}
+        style={{ color: "inherit", textDecoration: "none" }}
       >
         <CardMedia
           component="img"

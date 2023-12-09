@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material"
+import { Box, Button, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next"
 
 import PriceBox from "./PriceBox"
@@ -19,8 +19,15 @@ const GameCardPriceAction = ({ gameId, name, price }: Props) => {
   return (
     <Box mt={3} display="flex" justifyContent="flex-end">
       <PriceBox price={price} />
-      <Button variant="outlined" color="primary" onClick={handleButtonClick}>
-        {t("homePage.gameCard.button")}
+      <Button
+        variant="outlined"
+        color="primary"
+        onClick={handleButtonClick}
+        style={{ color: "inherit" }}
+      >
+        <Typography variant="button" fontWeight="bold">
+          {t("homePage.gameCard.button")}
+        </Typography>
       </Button>
     </Box>
   )
