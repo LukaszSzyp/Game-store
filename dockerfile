@@ -1,11 +1,13 @@
-FROM node:alpine as build
-ARG mode=dev
+FROM node:18-alpine3.17 as build
+
 WORKDIR /app
 COPY package*.json /app
 RUN npm install
+
 COPY . /app
 RUN npm run build
 
+FROM ubuntu
 RUN apt-get update
 RUN apt-get install nginx -y
 COPY --from=build /app/dist /var/www/html/

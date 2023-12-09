@@ -27,4 +27,13 @@ In order to run the application Type the following command
 npm run dev
 ```
 
+Building and running in Docker
+
+```bash
+docker build -t game-store-app .
+docker run -p 3000:80 game-store-app
+```
+
+app is run on http://localhost:3000/
+
 The Application Runs on **localhost:5173**

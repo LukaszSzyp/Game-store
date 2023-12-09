@@ -7,14 +7,7 @@ import GameCard from "./GameCard"
 import Spinner from "./Spinner"
 
 const GameGrid = () => {
-  const {
-    data,
-    error,
-    isLoading,
-    isFetchingNextPage,
-    fetchNextPage,
-    hasNextPage,
-  } = useGames()
+  const { data, error, fetchNextPage, hasNextPage } = useGames()
 
   if (error) return <Typography>{error.message}</Typography>
 

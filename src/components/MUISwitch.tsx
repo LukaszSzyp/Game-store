@@ -1,7 +1,7 @@
 import { Switch } from "@mui/material"
 import styled from "styled-components"
 
-const MUISwitch = styled(Switch)(({ theme }) => ({
+const MUISwitch = styled(Switch)((/* { theme } */) => ({
   width: 62,
   height: 34,
   padding: 7,

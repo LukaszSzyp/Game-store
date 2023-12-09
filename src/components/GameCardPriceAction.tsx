@@ -9,7 +9,7 @@ interface Props {
   price: number
 }
 
-const GameCardPriceAction = ({ gameId, name, price }: Props) => {
+const GameCardPriceAction = ({ price }: Props) => {
   const { t } = useTranslation()
 
   const handleButtonClick = (e: React.MouseEvent<HTMLElement>) => {
