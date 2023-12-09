@@ -4,6 +4,8 @@ import Grid from "@mui/material/Unstable_Grid2"
 import GameHeading from "../components/GameHeading"
 import GameGrid from "../components/GameGrid"
 import GenreList from "../components/GenreList"
+import PlatformSelector from "../components/PlatformSelector"
+import SortSelector from "../components/SortSelector"
 
 const HomePage = () => {
   return (
@@ -14,8 +16,12 @@ const HomePage = () => {
       <Grid xs={10}>
         <GameHeading />
         <Box display="flex" my={2}>
-          <Box>platform selektor</Box>
-          <Box>sort selector</Box>
+          <Box>
+            <PlatformSelector />
+          </Box>
+          <Box>
+            <SortSelector />
+          </Box>
         </Box>
         <Box>
           <GameGrid />
