@@ -1,15 +1,9 @@
-import {
-  Box,
-  Button,
-  CircularProgress,
-  List,
-  ListItem,
-  Typography,
-} from "@mui/material"
+import { Box, Button, List, ListItem, Typography } from "@mui/material"
 
 import useGenres from "../hooks/useGenres"
 import getCroppedImageUrl from "../services/image-url"
 import useGamesQueryStore from "../store"
+import Spinner from "./Spinner"
 
 const GenreList = () => {
   const { data, isLoading, error } = useGenres()
@@ -17,7 +11,7 @@ const GenreList = () => {
   const setSelectedGenreId = useGamesQueryStore((s) => s.setGenreId)
   if (error) return null
 
-  if (isLoading) return <CircularProgress />
+  if (isLoading) return <Spinner />
 
   return (
     <>

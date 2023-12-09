@@ -1,16 +1,18 @@
 import { useParams } from "react-router-dom"
 import useGame from "../hooks/useGame"
-import { CircularProgress, Grid, Typography } from "@mui/material"
+import { Grid, Typography } from "@mui/material"
+
 import ExpandableText from "../components/ExpandableText"
 import GameAttributes from "../components/GameAttributes"
 import GameTrailer from "../components/GameTrailer"
 import GameScreenshots from "../components/GameScreenshots"
+import Spinner from "../components/Spinner"
 
 const GameDetailPage = () => {
   const { slug } = useParams()
   const { data: game, isLoading, error } = useGame(slug!)
 
-  if (isLoading) return <CircularProgress />
+  if (isLoading) return <Spinner />
 
   if (error || !game) throw error
 

@@ -1,10 +1,10 @@
 import { Grid, Typography } from "@mui/material"
-import CircularProgress from "@mui/material/CircularProgress"
 
 import InfiniteScroll from "react-infinite-scroll-component"
 import useGames from "../hooks/useGames"
 import GameCardContainer from "./GameCardContainer"
 import GameCard from "./GameCard"
+import Spinner from "./Spinner"
 
 const GameGrid = () => {
   const {
@@ -26,7 +26,7 @@ const GameGrid = () => {
       dataLength={fetchedGamesCount}
       hasMore={!!hasNextPage} //!!hasNextPage
       next={() => fetchNextPage()}
-      loader={<CircularProgress />}
+      loader={<Spinner />}
       style={{ overflow: "hiden" }}
     >
       <Grid container>
