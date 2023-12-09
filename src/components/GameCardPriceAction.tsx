@@ -17,7 +17,7 @@ const GameCardPriceAction = ({ gameId, name, price }: Props) => {
     console.log("click")
   }
   return (
-    <Box mt={3} display="flex" justifyContent="center">
+    <Box mt={3} display="flex" justifyContent="flex-end">
       <PriceBox price={price} />
       <Button variant="outlined" color="primary" onClick={handleButtonClick}>
         {t("homePage.gameCard.button")}
