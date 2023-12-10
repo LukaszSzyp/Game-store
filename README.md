@@ -31,7 +31,7 @@ Building and running in Docker
 
 ```bash
 docker build -t game-store-app .
-docker run -p 3000:80 game-store-app
+docker run -d -p 3000:80 game-store-app
 ```
 
 app is run on http://localhost:3000/
