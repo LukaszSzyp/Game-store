@@ -5,14 +5,17 @@ import useGames from "../hooks/useGames"
 import GameCardContainer from "./GameCardContainer"
 import GameCard from "./GameCard"
 import Spinner from "./Spinner"
+import GameCardSkeleton from "./GameCardSkeleton"
 
 const GameGrid = () => {
-  const { data, error, fetchNextPage, hasNextPage } = useGames()
+  const { data, error, isLoading, fetchNextPage, hasNextPage } = useGames()
 
   if (error) return <Typography>{error.message}</Typography>
 
   const fetchedGamesCount =
     data?.pages.reduce((total, page) => total + page.results.length, 0) || 0
+
+  const skeletons = [...Array(4 * 4).keys()]
 
   return (
     <InfiniteScroll
@@ -23,6 +26,14 @@ const GameGrid = () => {
       style={{ overflow: "hiden" }}
     >
       <Grid container>
+        {isLoading &&
+          skeletons.map((skeleton) => (
+            <Grid xl={3} key={skeleton}>
+              <GameCardContainer>
+                <GameCardSkeleton />
+              </GameCardContainer>
+            </Grid>
+          ))}
         {data?.pages.map((page) =>
           page.results.map((game) => (
             <Grid xl={3} key={game.id}>
