@@ -27,7 +27,7 @@ In order to run the application Type the following command
 npm run dev
 ```
 
-The Application Runs on **localhost:5173**
+The Application Runs on **http://localhost:5173/**
 
 Building and running in Docker
 
