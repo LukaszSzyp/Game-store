@@ -29,7 +29,7 @@ npm run dev
 
 The Application Runs on **http://localhost:5173/**
 
-Building and running in Docker
+### Building and running in Docker
 
 ```bash
 docker build -t game-store-app .
