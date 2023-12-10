@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom"
 import useGame from "../hooks/useGame"
-import { Grid, Typography } from "@mui/material"
+import { Box, Grid, Typography } from "@mui/material"
 
 import ExpandableText from "../components/ExpandableText"
 import GameAttributes from "../components/GameAttributes"
 import GameTrailer from "../components/GameTrailer"
 import GameScreenshots from "../components/GameScreenshots"
 import Spinner from "../components/Spinner"
+import GameCardPriceAction from "../components/GameCardPriceAction"
 
 const GameDetailPage = () => {
   const { slug } = useParams()
@@ -22,6 +23,13 @@ const GameDetailPage = () => {
         <Typography variant="h3">{game.name}</Typography>
         <ExpandableText>{game.description_raw}</ExpandableText>
         <GameAttributes game={game} />
+        <Box mr={3}>
+          <GameCardPriceAction
+            gameId={game.id}
+            name={game.name}
+            price={game.rating_top}
+          />
+        </Box>
       </Grid>
 
       <Grid item xl={6}>

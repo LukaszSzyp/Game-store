@@ -18,7 +18,7 @@ const PriceBox = ({ price }: Props) => {
     >
       {price}
       <Typography fontSize="12px" fontWeight="bold">
-        {t("homePage.gameCard.currency")}
+        {t("common.currency")}
       </Typography>
     </Box>
   )

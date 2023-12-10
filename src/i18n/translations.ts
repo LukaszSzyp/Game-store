@@ -1,6 +1,9 @@
 export const translations = {
   en: {
     translation: {
+      common: {
+        currency: "USD",
+      },
       homePage: {
         header: {
           appTitle: "Super Game Store",
@@ -8,7 +11,6 @@ export const translations = {
         },
         gameCard: {
           button: "Add to basket",
-          currency: "USD",
         },
         platformsSelector: {
           title: "Platforms",
@@ -24,6 +26,10 @@ export const translations = {
             averageRating: "Average rating",
           },
         },
+      },
+      basket: {
+        noItems: "No items",
+        basketCounter: "To pay",
       },
     },
   },

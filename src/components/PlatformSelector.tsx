@@ -3,7 +3,7 @@ import { Button, Icon, Menu, MenuItem } from "@mui/material"
 
 import usePlatforms from "../hooks/usePlatforms"
 import usePlatform from "../hooks/usePlatform"
-import useGamesQueryStore from "../store"
+import useGamesQueryStore from "../store/gameStore"
 import { useTranslation } from "react-i18next"
 
 const PlatformSelector = () => {

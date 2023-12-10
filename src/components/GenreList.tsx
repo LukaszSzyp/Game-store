@@ -2,7 +2,7 @@ import { Box, Button, List, ListItem, Typography } from "@mui/material"
 
 import useGenres from "../hooks/useGenres"
 import getCroppedImageUrl from "../services/image-url"
-import useGamesQueryStore from "../store"
+import useGamesQueryStore from "../store/gameStore"
 import Spinner from "./Spinner"
 
 const GenreList = () => {

@@ -4,7 +4,7 @@ import Icon from "@mui/material/Icon"
 import OutlinedInput from "@mui/material/OutlinedInput"
 import InputAdornment from "@mui/material/InputAdornment"
 
-import useGamesQueryStore from "../store"
+import useGamesQueryStore from "../store/gameStore"
 import { useNavigate } from "react-router-dom"
 
 const SearchInput = () => {

@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material"
 import { useTranslation } from "react-i18next"
 
 import PriceBox from "./PriceBox"
+import useBasketStore from "../store/basketStore"
 
 interface Props {
   gameId: number
@@ -9,12 +10,16 @@ interface Props {
   price: number
 }
 
-const GameCardPriceAction = ({ price }: Props) => {
+const GameCardPriceAction = ({ price, gameId }: Props) => {
   const { t } = useTranslation()
+  const addItem = useBasketStore((s) => s.addItem)
 
   const handleButtonClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    console.log("click")
+    addItem({
+      gameId,
+      price,
+    })
   }
   return (
     <Box mt={3} display="flex" justifyContent="flex-end">
