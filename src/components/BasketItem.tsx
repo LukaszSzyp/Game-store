@@ -12,7 +12,6 @@ type Props = {
 const BasketItem = ({ gameId, price }: Props) => {
   const { data: game } = useGameItem(gameId)
   const deleteItem = useBasketStore((s) => s.deleteItem)
-
   if (game)
     return (
       <Box
