@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom"
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 
 import backgroundImage from "../../assets/test/Counter-Strike.jpg"
 import getCroppedImageUrl from "../../services/image-url"
@@ -21,7 +21,10 @@ const mockGetCroppedImageUrl = getCroppedImageUrl as jest.MockedFunction<
 >
 
 describe("Basket item component", () => {
-  test.only("should render game name", () => {
+  /**
+   * CONFIG
+   */
+  beforeEach(() => {
     mockUseGameItem.mockReturnValue({
       data: {
         id: 4291,
@@ -31,8 +34,41 @@ describe("Basket item component", () => {
     })
     mockBasketStore.mockReturnValue(jest.fn())
     mockGetCroppedImageUrl.mockReturnValue("")
+  })
+
+  /**
+   * TESTS
+   */
+
+  test("Should render game name", () => {
     render(<BasketItem gameId={1} price={100} />)
     const pElement = screen.getByText(/Counter-Strike: Global Offensive/i)
     expect(pElement).toBeInTheDocument()
+  })
+
+  test("Should render game image", () => {
+    render(<BasketItem gameId={1} price={100} />)
+    const imgElement = screen.getByRole("img")
+    expect(imgElement).toBeInTheDocument()
+  })
+
+  test("Should render PriceBox component", () => {
+    render(<BasketItem gameId={1} price={100} />)
+    const componentPriceBoxElement = screen.getByText(/100/)
+    expect(componentPriceBoxElement).toBeInTheDocument()
+  })
+
+  test("Should render delete icon button", () => {
+    render(<BasketItem gameId={1} price={100} />)
+    const deleteButton = screen.getByRole("button")
+    const spanElement = deleteButton.firstChild
+    expect(spanElement?.textContent).toBe("delete")
+  })
+
+  test("Should change color when hover to red delete icon button", () => {
+    render(<BasketItem gameId={1} price={100} />)
+    const deleteButton = screen.getByRole("button")
+    fireEvent.focus(deleteButton)
+    expect(deleteButton).toHaveStyle("color: red")
   })
 })
